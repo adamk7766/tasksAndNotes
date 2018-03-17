@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Lista notatek</h1>
+
+<p th:if="${message}" id="message" th:text="${message}"/>
+
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Show</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="note: ${notes}">
+        <td th:text="${note.title}"/>
+        <td th:text="${note.user}"/>
+        <td><a th:href="@{'/note/'+${note.id}}" th:text="${note.title}"/></td>
+        <td><a th:href="@{'/note/'+${note.id}+'/delete'}"> Delete </a></td>
+        <td><a th:href="@{'/note/'+${note.id}+'/edit'}"> Edit </a></td>
+    </tr>
+    </tbody>
+</table>
+<a href="/notes/add">Dodaj nową notatkę</a>
+
+
+
+</body>
+</html>

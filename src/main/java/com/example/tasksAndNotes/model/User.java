@@ -1,5 +1,7 @@
 package com.example.tasksAndNotes.model;
 
+import com.example.tasksAndNotes.model.Note;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,12 +20,12 @@ public class User {
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private List<Note> notes = new ArrayList<>();
 
-    public List<Note> getBooks() {
+    public List<Note> getNotes() {
         return notes;
     }
 
-    public void setBooks(List<Note> books) {
-        this.notes = books;
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
     }
 
     @PreRemove
@@ -31,7 +33,7 @@ public class User {
         System.out.println("Usunięto autora");
     }
 
-    public int getNumberOfBooks(){
+    public int getNumberOfNotes(){
         return notes.size();
     }
 

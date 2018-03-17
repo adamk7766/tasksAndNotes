@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,13 +7,16 @@
 <body>
 
 
-<h1 th:text="${author}"></h1>
+<h1 th:text="${user}"></h1>
 
 
-<h2>Książki</h2>
+<h2>Notatki</h2>
 <ol>
-    <li th:each="book : ${author.books}" th:text="${book}"/>
+    <li th:each="user : ${user.notes}" text="user.notes"/>
 </ol>
 
 </body>
 </html>
+
+<!--
+<li th:each="user : ${user.notes}" th:text="${note}"/>-->

@@ -6,13 +6,13 @@
 </head>
 <body>
 
-<form th:action="@{/authors}" th:method="post" th:object="${author}">
+<form th:action="@{/users}" th:method="post" th:object="${user}">
     <input type="hidden" th:field="*{id}">
     <label>Imię:</label>
-    <input type="text" th:value="${author.name}"
+    <input type="text" th:value="${user.name}"
            th:field="*{name}">
     <label>Nazwisko:</label>
-    <input type="text" th:value="${author.surname}"
+    <input type="text" th:value="${user.surname}"
            th:field="*{surname}">
     <input type="submit" th:value="Save">
 </form>

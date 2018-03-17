@@ -22,21 +22,21 @@
         <th>Show</th>
         <th>Edit</th>
         <th>Delete</th>
-        <th>Number of Books</th>
+        <th>Number of notes</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="author: ${authors}">
-        <td th:text="${author.name}"/>
-        <td th:text="${author.surname}"/>
-        <td><a th:href="@{'/authors/'+${author.id}}" th:text="${author.name}"/></td>
-        <td><a th:href="@{'/authors/'+${author.id}+'/edit'}"> Edit </a></td>
-        <td><a th:href="@{'/authors/'+${author.id}+'/delete'}"> Delete </a></td>
-        <td><span th:text="${author.getNumberOfBooks()}"/></td>
+    <tr th:each="user: ${users}">
+        <td th:text="${user.name}"/>
+        <td th:text="${user.surname}"/>
+        <td><a th:href="@{'/users/'+${user.id}}" th:text="${user.name}"/></td>
+        <td><a th:href="@{'/users/'+${user.id}+'/edit'}"> Edit </a></td>
+        <td><a th:href="@{'/users/'+${user.id}+'/delete'}"> Delete </a></td>
+        <td><span th:text="${user.getNumberOfNotes()}"/></td>
     </tr>
     </tbody>
 </table>
-<a href="/authors/add">Dodaj nowego Authora</a>
+<a href="/users/add">Dodaj nowego Authora</a>
 
 
 
