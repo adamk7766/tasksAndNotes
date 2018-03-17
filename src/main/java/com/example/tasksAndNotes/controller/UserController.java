@@ -33,7 +33,7 @@ public class UserController {
     @GetMapping("/users")
     public String index(ModelMap modelMap){
         modelMap.addAttribute("users",userRepository.findAll());
-        return "users/index";
+        return "users/usersList";
     }
 
     @GetMapping("user/{id}/edit")

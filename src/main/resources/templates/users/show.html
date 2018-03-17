@@ -11,12 +11,10 @@
 
 
 <h2>Notatki</h2>
+
 <ol>
-    <li th:each="user : ${user.notes}" text="user.notes"/>
+    <li th:each="note : ${user.notes}" th:text="${note}"/>
 </ol>
 
 </body>
 </html>
-
-<!--
-<li th:each="user : ${user.notes}" th:text="${note}"/>-->
