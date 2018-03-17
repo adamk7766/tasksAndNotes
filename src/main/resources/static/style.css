@@ -1,0 +1,123 @@
+body {
+    font-family: Arial;
+    font-size:12px;
+    background-color: rgb(168, 167, 167);
+}
+
+header {
+    text-align: center;
+    background-image: url('notes.jpg');
+    background-position: center;
+    /*
+    background-color: rgb(0, 247, 255);
+    */
+    padding: 5px;
+}
+
+header h1 {
+    font-size: 42px;
+    color: darkblue;
+    text-shadow: 2px 2px deepskyblue;
+}
+
+header nav {
+    text-align: center;
+    
+    
+    padding: 3px
+} 
+
+header nav a {
+    font-size: 14px;
+    padding: 5px;
+}
+
+header nav a:hover {
+    background: rgb(253, 244, 160)
+}
+
+.top-headline{
+    color: blue;
+}
+
+.background-green{
+    background: green;
+}
+
+.background-red{
+    background: red;
+}
+
+.background-aqua{
+    background: aqua;
+}
+
+
+
+.display-inline-block {
+    display: inline-block;
+    background-color: rgb(45, 192, 45);
+    width: 150px;
+    margin-left: 15px;
+    padding: 5px;
+    position: relative;
+}
+
+.display-wrapper {
+    position: relative;
+    background: green;
+}
+
+.counter {
+    width: 20px;
+            height: 20px;
+            background: red;
+            padding: 5px;
+            color: white;
+            margin-top: 0;
+            margin-left: 0;
+            position: absolute;
+            top: 0;
+            /*
+            left: 100%;
+            margin-left: -10px;
+            margin-top: -10px;
+            */
+            right: 0;
+            margin-right: -10px;
+            margin-top: -10px;
+}
+
+main {
+    background-color: rgb(255, 255, 255);
+    padding: 5px
+}
+
+main section {
+    overflow: hidden;
+}
+
+main section.grey-section {
+    background: rgb(226, 226, 226);
+}
+
+main section p img {
+    width: 200px;
+    float: left;
+    margin-right: 5px;
+    
+}
+
+footer {
+    padding: 5px
+}
+
+main form div label {
+    width: 200px;
+    display: inline-block;
+}
+
+main form div {
+    margin-bottom: 5px;
+    
+}

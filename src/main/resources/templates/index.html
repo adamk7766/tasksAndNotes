@@ -1,10 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <title>Index</title>
 </head>
 <body>
+
+<header>
+
+    <h1>(: Notatki & Zadania :)</h1>
+
+    <nav class="display-wrapper">
+
+        <a href="index.html" class="display-inline-block">
+            Strona Główna
+            <!--<div class="counter">
+                12
+            </div>-->
+        </a>
+
+        <a href="notes.html" class="display-inline-block">Notatki</a>
+
+        <a href="tasks.html" class="display-inline-block">Zadania</a>
+
+
+    </nav>
+
+
+
+</header>
+
+<main>
+    <hr>
+    <section>
+        <h2 href="notes.html" >Notatki</h2>
+        <p>
+            <a href="notes.html">
+                <img src="notepad.png" alt="notes">
+            </a>
+
+        </p>
+        <!--<dev><a href="notes.html" >Przejrzyj notatki</a></dev>-->
+
+
+    </section>
+    <hr>
+    <section class="grey-section">
+        <h2>Zadania</h2>
+        <p>
+
+            <a href="tasks.html">
+                <img src="task_list.jpg" alt="tasks">
+            </a>
+
+        </p>
+<!--
+        <a href="testy_passata.html">Przejrzyj zadania</a>
+-->
+
+    </section>
+    <hr>
+
+</main>
+
 
 </body>
 </html>
