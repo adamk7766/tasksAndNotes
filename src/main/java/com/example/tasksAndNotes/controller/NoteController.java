@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -45,6 +46,17 @@ public class NoteController {
         return "notes/notesList";
     }
 
+    @GetMapping("note/{id}")
+    public String show(@PathVariable Long id, ModelMap modelMap) {
+        modelMap.put("note", noteRepository.findById(id).get());
+        return "notes/show";
+    }
+
+    @GetMapping("note/{id}/delete")
+    public String delete(@PathVariable Long id,ModelMap modelMap){
+        noteRepository.deleteById(id);
+        return "redirect:/notes";
+    }
 
 
 
