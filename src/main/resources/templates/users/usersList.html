@@ -3,35 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 </head>
 <body>
 
-<h1>Lista autorów</h1>
+<header>
+
+    <h1>(: Notatki & Zadania :)</h1>
+
+    <nav class="display-wrapper">
+
+        <a href="/" class="display-inline-block">
+            Strona Główna
+            <!--<div class="counter">
+                12
+            </div>-->
+        </a>
+
+        <a href="/notes" class="display-inline-block">Notatki</a>
+
+        <a href="/tasks" class="display-inline-block">Zadania</a>
+
+
+    </nav>
+
+
+
+</header>
+
+<h1>Lista użytkowników</h1>
 
 <p th:if="${message}" id="message"
    th:text="${message}"/>
 
-
-
-
 <table>
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Show</th>
-        <th>Edit</th>
-        <th>Delete</th>
-        <th>Number of notes</th>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+        <th>Podgląd</th>
+        <th>Edycja</th>
+        <th>Usuń</th>
+        <th>Ilość notatek</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="user: ${users}">
         <td th:text="${user.name}"/>
         <td th:text="${user.surname}"/>
-        <td><a th:href="@{'/users/'+${user.id}}" th:text="${user.name}"/></td>
+        <td><a th:href="@{'/users/'+${user.id}}"><img src="icon.png" alt="edite icon"></a></td>
         <td><a th:href="@{'/users/'+${user.id}+'/edit'}"> Edit </a></td>
-        <td><a th:href="@{'/users/'+${user.id}+'/delete'}"> Delete </a></td>
+        <td><a th:href="@{'/users/'+${user.id}+'/delete'}"><img src="delete_icon.png" alt="delete icon"></a></td>
         <td><span th:text="${user.getNumberOfNotes()}"/></td>
     </tr>
     </tbody>

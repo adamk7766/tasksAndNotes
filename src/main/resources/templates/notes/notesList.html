@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 </head>
 <body>
+
+<header>
+
+    <h1>(: Notatki & Zadania :)</h1>
+
+    <nav class="display-wrapper">
+
+        <a href="/" class="display-inline-block">
+            Strona Główna
+            <!--<div class="counter">
+                12
+            </div>-->
+        </a>
+
+        <a href="/notes" class="display-inline-block">Notatki</a>
+
+        <a href="/tasks" class="display-inline-block">Zadania</a>
+
+
+    </nav>
+
+
+
+</header>
 
 <h1>Lista notatek</h1>
 
@@ -16,17 +41,18 @@
         <th>Title</th>
         <th>Author</th>
         <th>Show</th>
-        <th>Delete</th>
         <th>Edit</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="note: ${notes}">
         <td th:text="${note.title}"/>
         <td th:text="${note.user}"/>
-        <td><a th:href="@{'/note/'+${note.id}}" th:text="${note.title}"/></td>
-        <td><a th:href="@{'/note/'+${note.id}+'/delete'}"> Delete </a></td>
+        <td><a th:href="@{'/note/'+${note.id}}"><img src="icon.png" alt="edite icon"></a></td>
+
         <td><a th:href="@{'/note/'+${note.id}+'/edit'}"> Edit </a></td>
+        <td><a th:href="@{'/note/'+${note.id}+'/delete'}"class="confirm"><img src="delete_icon.png" alt="delete icon"></a></td>
     </tr>
     </tbody>
 </table>

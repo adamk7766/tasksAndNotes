@@ -1,7 +1,7 @@
 body {
     font-family: Arial;
-    font-size:12px;
-    background-color: rgb(168, 167, 167);
+    font-size:16px;
+    background-color: rgb(218, 223, 250);
 }
 
 header {
@@ -121,3 +121,21 @@ main form div {
     margin-bottom: 5px;
     
 }
+
+h1{
+    color: blue;
+}
+
+img{
+    width: 30px;
+    height: auto;
+}
+
+div{
+    padding: 5px;
+}
+
+td{
+    padding: 5px;
+}
+
