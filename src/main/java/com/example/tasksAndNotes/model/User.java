@@ -20,12 +20,25 @@ public class User {
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     private List<Note> notes = new ArrayList<>();
 
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    private List<Task> tasks = new ArrayList<>();
+
     public List<Note> getNotes() {
         return notes;
     }
 
     public void setNotes(List<Note> notes) {
         this.notes = notes;
+    }
+
+
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
     }
 
     @PreRemove
@@ -35,6 +48,10 @@ public class User {
 
     public int getNumberOfNotes(){
         return notes.size();
+    }
+
+    public int getNumberOfTasks(){
+        return tasks.size();
     }
 
     public String getSurname() {

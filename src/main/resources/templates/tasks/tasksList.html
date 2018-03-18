@@ -43,32 +43,32 @@
 
 </header>
 
-<h1>Lista notatek</h1>
+<h1>Lista zadań</h1>
 
 <p th:if="${message}" id="message" th:text="${message}"/>
 
 <table>
     <thead>
     <tr>
-        <th>Tytuł notatki</th>
-        <th>Autor</th>
+        <th>Tytuł zadania</th>
+        <th>Zadanie dla</th>
         <th>Podgląd</th>
         <th>Edycja</th>
         <th>Usuń</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="note: ${notes}">
-        <td th:text="${note.title}"/>
-        <td th:text="${note.user}"/>
-        <td><a th:href="@{'/note/'+${note.id}}"><img src="icon.png" alt="edite icon"></a></td>
+    <tr th:each="task: ${tasks}">
+        <td th:text="${task.title}"/>
+        <td th:text="${task.user}"/>
+        <td><a th:href="@{'/task/'+${task.id}}"><img src="icon.png" alt="edite icon"></a></td>
 
-        <td><a th:href="@{'/note/'+${note.id}+'/edit'}"> Edit </a></td>
-        <td><a th:href="@{'/note/'+${note.id}+'/delete'}"class="confirm"><img src="delete_icon.png" alt="delete icon"></a></td>
+        <td><a th:href="@{'/task/'+${task.id}+'/edit'}"> Edit </a></td>
+        <td><a th:href="@{'/task/'+${task.id}+'/delete'}"class="confirm"><img src="delete_icon.png" alt="delete icon"></a></td>
     </tr>
     </tbody>
 </table>
-<a href="/notes/add">Dodaj nową notatkę</a>
+<a href="/tasks/add">Dodaj nowe zadanie</a>
 
 
 

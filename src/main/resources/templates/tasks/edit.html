@@ -32,20 +32,42 @@
 </header>
 
 
-<h1 th:text="${user}"></h1>
+<h1>Edycja zadania</h1>
 
 
-<h2>Notatki</h2>
+<form th:action="@{/tasks}" th:method="post" th:object="${task}">
 
-<ol>
-    <li th:each="note : ${user.notes}" th:text="${note}"/>
-</ol>
+    <input type="hidden" th:field="*{id}">
+    <label>Tytuł:</label>
+    <input type="text" th:field="*{title}">
+    <label>Zadanie dla:</label>
 
-<h2>Zadania</h2>
+    <select th:field="*{user}">
+        <option th:each="user: ${users}" th:value="${user.id}"
+                th:text="${user}"/>
+    </select>
 
-<ol>
-    <li th:each="task : ${user.tasks}" th:text="${task}"/>
-</ol>
+    <label>Treść:</label>
+    <input type="text" th:field="*{content}">
+
+    <input type="submit" value="Potwierdź zmiany">
+
+
+
+
+
+</form>
+
+<form th:action="@{/tasks}" th:method="get">
+
+    <button type="submit" value="cancel">Anuluj</button>
+
+</form>
+
+
+
+
+
 
 </body>
 </html>

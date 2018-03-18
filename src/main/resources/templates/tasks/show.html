@@ -32,20 +32,17 @@
 </header>
 
 
-<h1 th:text="${user}"></h1>
+<!--<p id="message" th:if="${message}" th:text="${message}"></p>-->
 
+<div th:if="${task}">
+    <label>Tytuł zadania:</label>
+    <h2 th:text="${task.title}"></h2>
+    <label>Treść zadania:</label>
+    <h2 th:text="${task.content}"></h2>
+    <label>Zadanie dla::</label>
+    <h2 th:text="${task.user}"></h2>
 
-<h2>Notatki</h2>
-
-<ol>
-    <li th:each="note : ${user.notes}" th:text="${note}"/>
-</ol>
-
-<h2>Zadania</h2>
-
-<ol>
-    <li th:each="task : ${user.tasks}" th:text="${task}"/>
-</ol>
+</div>
 
 </body>
 </html>
