@@ -32,17 +32,42 @@
 </header>
 
 
-<!--<p id="message" th:if="${message}" th:text="${message}"></p>-->
+<h1>Edycja notatki</h1>
 
-<div th:if="${note}">
-    <label>Tytuł Notatki:</label>
-    <h2 th:text="${note.title}"></h2>
-    <label>Treść notatki:</label>
-    <h2 th:text="${note.content}"></h2>
+
+<form th:action="@{/notes}" th:method="post" th:object="${note}">
+
+    <input type="hidden" th:field="*{id}">
+    <label>Tytuł:</label>
+    <input type="text" th:field="*{title}">
     <label>Autor:</label>
-    <h2 th:text="${note.user}"></h2>
 
-</div>
+    <select th:field="*{user}">
+        <option th:each="user: ${users}" th:value="${user.id}"
+                th:text="${user}"/>
+    </select>
+
+    <label>Treść:</label>
+    <input type="text" th:field="*{content}">
+
+    <input type="submit" value="Potwierdź zmiany">
+
+
+
+
+
+</form>
+
+<form th:action="@{/notes}" th:method="get">
+
+    <button type="submit" value="cancel">Anuluj</button>
+
+</form>
+
+
+
+
+
 
 </body>
 </html>

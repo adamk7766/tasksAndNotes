@@ -56,16 +56,19 @@ header nav a:hover {
 
 .display-inline-block {
     display: inline-block;
-    background-color: rgb(45, 192, 45);
+    background-color: rgb(252, 149, 81);
     width: 150px;
     margin-left: 15px;
     padding: 5px;
     position: relative;
+    font-weight: bold;
 }
 
 .display-wrapper {
     position: relative;
+    /*
     background: green;
+    */
 }
 
 .counter {
@@ -127,7 +130,7 @@ h1{
 }
 
 img{
-    width: 30px;
+    width: 25px;
     height: auto;
 }
 
@@ -139,3 +142,10 @@ td{
     padding: 5px;
 }
 
+th{
+    padding: 5px;
+}
+
+form button{
+    margin: 10px;
+}

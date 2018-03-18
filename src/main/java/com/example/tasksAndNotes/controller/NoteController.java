@@ -6,10 +6,7 @@ import com.example.tasksAndNotes.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class NoteController {
@@ -58,6 +55,16 @@ public class NoteController {
         return "redirect:/notes";
     }
 
+    @GetMapping("note/{id}/edit")
+    public String edit(@PathVariable Long id, ModelMap modelMap) {
+        modelMap.put("note", noteRepository.findById(id).get());
+        return "notes/edit";
+    }
+
+    @RequestMapping(value="/edit", method=RequestMethod.POST, params="action=cancel")
+    public String cancel() {
+        return "notes/notesList";
+    }
 
 
 }
