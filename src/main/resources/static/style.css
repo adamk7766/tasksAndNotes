@@ -7,6 +7,7 @@ body {
 header {
     text-align: center;
     background-image: url('notes.jpg');
+
     background-position: center;
     /*
     background-color: rgb(0, 247, 255);
@@ -52,20 +53,29 @@ header nav a:hover {
     background: aqua;
 }
 
+.center {
+    display: block;
+    text-align: center;
+
+}
+
 
 
 .display-inline-block {
     display: inline-block;
-    background-color: rgb(252, 149, 81);
-    width: 150px;
+    background-color: rgb(191, 252, 49);
+    width: 180px;
+    height: 20px;
     margin-left: 15px;
     padding: 5px;
     position: relative;
     font-weight: bold;
+
 }
 
 .display-wrapper {
     position: relative;
+
     /*
     background: green;
     */
@@ -132,6 +142,8 @@ h1{
 img{
     width: 25px;
     height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 div{

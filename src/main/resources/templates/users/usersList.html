@@ -64,10 +64,10 @@
         <td th:text="${user.name}"/>
         <td th:text="${user.surname}"/>
         <td><a th:href="@{'/users/'+${user.id}}"><img src="icon.png" alt="edite icon"></a></td>
-        <td><a th:href="@{'/users/'+${user.id}+'/edit'}"> Edit </a></td>
+        <td><a th:href="@{'/users/'+${user.id}+'/edit'}"><img src="edit_icon.png" alt="edit icon"></a></td>
         <td><a th:href="@{'/users/'+${user.id}+'/delete'}"class="confirm"><img src="delete_icon.png" alt="delete icon"></a></td>
-        <td><span th:text="${user.getNumberOfNotes()}"/></td>
-        <td><span th:text="${user.getNumberOfTasks()}"/></td>
+        <td><span th:text="${user.getNumberOfNotes()}"class="center"/></td>
+        <td><span th:text="${user.getNumberOfTasks()}"class="center"/></td>
     </tr>
     </tbody>
 </table>

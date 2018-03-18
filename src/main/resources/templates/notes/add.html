@@ -45,9 +45,10 @@
     <label>Tytuł:</label>
     <input type="text" th:field="*{title}">
     <label>Autor:</label>
+
     <select th:field="*{user}">
-    <option th:each="user: ${users}" th:value="${user.id}"
-            th:text="${user}"/>
+        <option th:each="user: ${users}" th:value="${user.id}"
+                th:text="${user}"/>
     </select>
 
     <label>Treść:</label>

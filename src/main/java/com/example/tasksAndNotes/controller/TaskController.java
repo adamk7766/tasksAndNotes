@@ -10,6 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class TaskController {
 
@@ -23,7 +26,6 @@ public class TaskController {
     public String Main(){
         return "notes/notesList";
     }*/
-
 
 
     @GetMapping("/tasks/add")
@@ -67,6 +69,5 @@ public class TaskController {
     public String cancel() {
         return "tasks/tasksList";
     }
-
 
 }

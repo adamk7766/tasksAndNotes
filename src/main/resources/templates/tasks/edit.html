@@ -20,9 +20,9 @@
             </div>-->
         </a>
 
-        <a href="notes" class="display-inline-block">NOTATKI</a>
+        <a href="/notes" class="display-inline-block">NOTATKI</a>
 
-        <a href="tasks" class="display-inline-block">ZADANIA</a>
+        <a href="/tasks" class="display-inline-block">ZADANIA</a>
 
 
     </nav>
@@ -49,6 +49,9 @@
 
     <label>Treść:</label>
     <input type="text" th:field="*{content}">
+
+    <label>Skończone:</label>
+    <input type="checkbox" name="finished">
 
     <input type="submit" value="Potwierdź zmiany">
 

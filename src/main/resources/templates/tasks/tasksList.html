@@ -52,6 +52,7 @@
     <tr>
         <th>Tytuł zadania</th>
         <th>Zadanie dla</th>
+        <th>Status</th>
         <th>Podgląd</th>
         <th>Edycja</th>
         <th>Usuń</th>
@@ -61,9 +62,10 @@
     <tr th:each="task: ${tasks}">
         <td th:text="${task.title}"/>
         <td th:text="${task.user}"/>
-        <td><a th:href="@{'/task/'+${task.id}}"><img src="icon.png" alt="edite icon"></a></td>
+        <td th:text="${task.description()}"/>
+        <td><a th:href="@{'/task/'+${task.id}}"><img src="icon.png"  alt="edite icon"></a></td>
 
-        <td><a th:href="@{'/task/'+${task.id}+'/edit'}"> Edit </a></td>
+        <td><a th:href="@{'/task/'+${task.id}+'/edit'}"><img src="edit_icon.png" alt="edit icon"></a></td>
         <td><a th:href="@{'/task/'+${task.id}+'/delete'}"class="confirm"><img src="delete_icon.png" alt="delete icon"></a></td>
     </tr>
     </tbody>
