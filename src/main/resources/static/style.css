@@ -1,104 +1,12 @@
 body {
     font-family: Arial;
     font-size:16px;
-    background-color: rgb(218, 223, 250);
-}
-
-header {
-    text-align: center;
-    background-image: url('notes.jpg');
-
-    background-position: center;
-    /*
-    background-color: rgb(0, 247, 255);
-    */
-    padding: 5px;
-}
-
-header h1 {
-    font-size: 42px;
-    color: darkblue;
-    text-shadow: 2px 2px deepskyblue;
-}
-
-header nav {
-    text-align: center;
-    
-    
-    padding: 3px
-} 
-
-header nav a {
-    font-size: 14px;
-    padding: 5px;
-}
-
-header nav a:hover {
-    background: rgb(253, 244, 160)
-}
-
-.top-headline{
-    color: blue;
-}
-
-.background-green{
-    background: green;
-}
-
-.background-red{
-    background: red;
-}
-
-.background-aqua{
-    background: aqua;
-}
-
-.center {
-    display: block;
-    text-align: center;
-
-}
-
-
-
-.display-inline-block {
-    display: inline-block;
-    background-color: rgb(191, 252, 49);
-    width: 180px;
-    height: 20px;
-    margin-left: 15px;
-    padding: 5px;
-    position: relative;
-    font-weight: bold;
-
+    background-color: rgb(230, 232, 239);
 }
 
 .display-wrapper {
     position: relative;
 
-    /*
-    background: green;
-    */
-}
-
-.counter {
-    width: 20px;
-            height: 20px;
-            background: red;
-            padding: 5px;
-            color: white;
-            margin-top: 0;
-            margin-left: 0;
-            position: absolute;
-            top: 0;
-            /*
-            left: 100%;
-            margin-left: -10px;
-            margin-top: -10px;
-            */
-            right: 0;
-            margin-right: -10px;
-            margin-top: -10px;
 }
 
 main {
@@ -118,11 +26,15 @@ main section p img {
     width: 200px;
     float: left;
     margin-right: 5px;
-    
 }
 
 footer {
     padding: 5px
+}
+
+.center {
+    display: block;
+    text-align: center;
 }
 
 main form div label {
@@ -133,6 +45,18 @@ main form div label {
 main form div {
     margin-bottom: 5px;
     
+}
+
+textarea {
+    border: none;
+}
+
+input {
+    border: none;
+}
+
+select {
+    border: none;
 }
 
 h1{
@@ -160,4 +84,41 @@ th{
 
 form button{
     margin: 10px;
+}
+
+ul {
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+ ul.topnav {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color: #0b518e;
+ }
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #73b8ee;}
+
+ul.topnav li a.active {background-color: #1d76af;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="navbar_notes">
+<ul class="topnav">
+    <li><a href="/">Panel Wyboru</a></li>
+    <li><a class="active" href="/notes">Notatki</a></li>
+    <li><a href="/tasks">Zadania</a></li>
+    <li class="right"><a href="/">(: notatki & zadania :)</a></li>
+
+</ul>
+</div>
+
+<div th:fragment="navbar_tasks">
+    <ul class="topnav">
+        <li><a href="/">Panel Wyboru</a></li>
+        <li><a href="/notes">Notatki</a></li>
+        <li><a class="active" href="/tasks">Zadania</a></li>
+        <li class="right"><a href="/">(: notatki & zadania :)</a></li>
+
+    </ul>
+</div>
+
+<div th:fragment="navbar_users">
+    <ul class="topnav">
+        <li><a href="/">Panel Wyboru</a></li>
+        <li><a href="/notes">Notatki</a></li>
+        <li><a href="/tasks">Zadania</a></li>
+        <li class="right"><a href="/">(: notatki & zadania :)</a></li>
+
+    </ul>
+</div>
+
+<div th:fragment="footer">
+    <footer>
+        &copy; 2018 GAAMIT
+    </footer>
+</div>
+
+</body>
+</html>

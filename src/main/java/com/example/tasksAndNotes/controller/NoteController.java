@@ -17,12 +17,6 @@ public class NoteController {
     @Autowired
     private UserRepository userRepository;
 
-    /*@GetMapping("/")
-    public String Main(){
-        return "notes/notesList";
-    }*/
-
-
 
     @GetMapping("/notes/add")
     public String add(ModelMap modelMap){
@@ -58,6 +52,7 @@ public class NoteController {
     @GetMapping("note/{id}/edit")
     public String edit(@PathVariable Long id, ModelMap modelMap) {
         modelMap.put("note", noteRepository.findById(id).get());
+        modelMap.addAttribute("users",userRepository.findAll());
         return "notes/edit";
     }
 

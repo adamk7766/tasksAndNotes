@@ -2,38 +2,31 @@
 <html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Index</title>
+
 </head>
 <body>
 
 <header>
 
-    <h1>(: Notatki & Zadania :)</h1>
-
-    <nav class="display-wrapper">
-
-        <a href="/" class="display-inline-block">
-            PANEL WYBORU
-            <!--<div class="counter">
-                12
-            </div>-->
-        </a>
-
-        <a href="notes" class="display-inline-block">NOTATKI</a>
-
-        <a href="tasks" class="display-inline-block">ZADANIA</a>
-
-
-    </nav>
-
-
 
 </header>
 
+
+<ul class="topnav">
+    <li><a class="active" href="/">Panel Wyboru</a></li>
+    <li><a href="notes">Notatki</a></li>
+    <li><a href="tasks">Zadania</a></li>
+    <li class="right"><a href="/">(: notatki & zadania :)</a></li>
+
+</ul>
+
+
 <main>
-    <hr>
+    <!--<hr>-->
     <section>
         <h2 href="notes" >Notatki</h2>
         <p>
@@ -46,7 +39,7 @@
 
 
     </section>
-    <hr>
+    <!--<hr>-->
     <section class="grey-section">
         <h2>Zadania</h2>
         <p>
@@ -61,7 +54,7 @@
 -->
 
     </section>
-    <hr>
+    <!--<hr>-->
 
 </main>
 

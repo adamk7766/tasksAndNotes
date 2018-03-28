@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 
     <script src="http://code.jquery.com/jquery-latest.min.js"
@@ -20,29 +21,9 @@
 <body>
 
 <header>
-
-    <h1>(: Notatki & Zadania :)</h1>
-
-    <nav class="display-wrapper">
-
-        <a href="/" class="display-inline-block">
-            PANEL WYBORU
-            <!--<div class="counter">
-                12
-            </div>-->
-        </a>
-
-        <a href="notes" class="display-inline-block">NOTATKI</a>
-
-        <a href="tasks" class="display-inline-block">ZADANIA</a>
-
-
-    </nav>
-
-
-
 </header>
-
+<div id="navbar_tasks" class="alt" th:include="fragments/fragments :: navbar_tasks">
+</div>
 <h1>Lista zadań</h1>
 
 <p th:if="${message}" id="message" th:text="${message}"/>
@@ -72,7 +53,7 @@
 </table>
 <a href="/tasks/add">Dodaj nowe zadanie</a>
 
-
-
+<div id="footer" class="alt" th:include="fragments/fragments :: footer">
+</div>
 </body>
 </html>

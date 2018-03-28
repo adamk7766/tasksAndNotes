@@ -39,7 +39,7 @@ public class UserController {
     @GetMapping("user/{id}/edit")
     public String edit(@PathVariable Long id,ModelMap modelMap){
         modelMap.put("user",userRepository.findById(id).get());
-        return "users/add";
+        return "users/edit";
     }
 
     @GetMapping("users/{id}")

@@ -2,35 +2,16 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
 </head>
 <body>
 
 <header>
-
-    <h1>(: Notatki & Zadania :)</h1>
-
-    <nav class="display-wrapper">
-
-        <a href="/" class="display-inline-block">
-            PANEL WYBORU
-            <!--<div class="counter">
-                12
-            </div>-->
-        </a>
-
-        <a href="notes" class="display-inline-block">NOTATKI</a>
-
-        <a href="tasks" class="display-inline-block">ZADANIA</a>
-
-
-    </nav>
-
-
-
 </header>
-
+<div id="navbar_notes" class="alt" th:include="fragments/fragments :: navbar_notes">
+</div>
 
 <h1>Edycja notatki</h1>
 
@@ -38,23 +19,28 @@
 <form th:action="@{/notes}" th:method="post" th:object="${note}">
 
     <input type="hidden" th:field="*{id}">
-    <label>Tytuł:</label>
-    <input type="text" th:field="*{title}">
-    <label>Autor:</label>
-
-    <select th:field="*{user}">
-        <option th:each="user: ${users}" th:value="${user.id}"
-                th:text="${user}"/>
-    </select>
-
-    <label>Treść:</label>
-    <input type="text" th:field="*{content}">
-
+    <div>
+        <label>Tytuł:</label>
+    </div>
+    <div>
+        <input type="text" th:field="*{title}">
+    </div>
+    <div>
+        <label>Autor:</label>
+    </div>
+    <div>
+        <select th:field="*{user}">
+            <option th:each="user: ${users}" th:value="${user.id}"
+                    th:text="${user}"/>
+        </select>
+    </div>
+    <div>
+        <label>Treść:</label>
+    </div>
+    <div>
+        <textarea th:field="*{content}" cols="30" rows="10"></textarea>
+    </div>
     <input type="submit" value="Potwierdź zmiany">
-
-
-
-
 
 </form>
 
@@ -64,10 +50,7 @@
 
 </form>
 
-
-
-
-
-
+<div id="footer" class="alt" th:include="fragments/fragments :: footer">
+</div>
 </body>
 </html>
