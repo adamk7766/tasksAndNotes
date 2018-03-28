@@ -8,13 +8,10 @@
 </head>
 <body>
 
-<header>
+<header id="navbar_users" class="alt" th:include="fragments/fragments :: navbar_users">
 </header>
-<div id="navbar_users" class="alt" th:include="fragments/fragments :: navbar_users">
-</div>
 
 <h1 th:text="${user}"></h1>
-
 
 <h2>Notatki</h2>
 

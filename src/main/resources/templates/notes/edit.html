@@ -8,13 +8,10 @@
 </head>
 <body>
 
-<header>
+<header id="navbar_notes" class="alt" th:include="fragments/fragments :: navbar_notes">
 </header>
-<div id="navbar_notes" class="alt" th:include="fragments/fragments :: navbar_notes">
-</div>
 
 <h1>Edycja notatki</h1>
-
 
 <form th:action="@{/notes}" th:method="post" th:object="${note}">
 

@@ -8,10 +8,9 @@
 </head>
 <body>
 
-<header>
+<header id="navbar_users" class="alt" th:include="fragments/fragments :: navbar_users">
 </header>
-<div id="navbar_users" class="alt" th:include="fragments/fragments :: navbar_users">
-</div>
+
 <h1>Dodawanie urzytkowników</h1>
 
 <form th:action="@{/users}" th:method="post" th:object="${user}">

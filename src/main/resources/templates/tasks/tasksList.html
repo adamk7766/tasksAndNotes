@@ -20,10 +20,9 @@
 </head>
 <body>
 
-<header>
+<header id="navbar_tasks" class="alt" th:include="fragments/fragments :: navbar_tasks">
 </header>
-<div id="navbar_tasks" class="alt" th:include="fragments/fragments :: navbar_tasks">
-</div>
+
 <h1>Lista zadań</h1>
 
 <p th:if="${message}" id="message" th:text="${message}"/>
