@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
     <script src="http://code.jquery.com/jquery-latest.min.js"
             type="text/javascript"></script>
     <script type="text/javascript">
@@ -42,7 +42,7 @@
     <tbody>
     <tr th:each="user: ${users}">
         <td th:text="${user.name}"/>
-        <td th:text="${user.surname}"/>
+        <td th:text="${user.lastName}"/>
         <td><a th:href="@{'/users/'+${user.id}}"><img src="icon.png" alt="edite icon"></a></td>
         <td><a th:href="@{'/users/'+${user.id}+'/edit'}"><img src="edit_icon.png" alt="edit icon"></a></td>
         <td><a th:href="@{'/users/'+${user.id}+'/delete'}"class="confirm"><img src="delete_icon.png" alt="delete icon"></a></td>
@@ -51,7 +51,7 @@
     </tr>
     </tbody>
 </table>
-<a href="/users/add">Dodaj nowego Użytkownika</a>
+<a href="/registration">Dodaj nowego Użytkownika</a>
 
 
 <div id="footer" class="alt" th:include="fragments/fragments :: footer">

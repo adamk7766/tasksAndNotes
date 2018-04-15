@@ -1,4 +1,4 @@
-package com.example.tasksAndNotes;
+package pl.gaamit.tasksAndNotes;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

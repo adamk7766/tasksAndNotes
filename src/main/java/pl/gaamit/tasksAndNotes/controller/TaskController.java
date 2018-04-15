@@ -1,10 +1,10 @@
-package com.example.tasksAndNotes.controller;
+package pl.gaamit.tasksAndNotes.controller;
 
 
-import com.example.tasksAndNotes.model.Task;
+import pl.gaamit.tasksAndNotes.model.Task;
 
-import com.example.tasksAndNotes.repository.TaskRepository;
-import com.example.tasksAndNotes.repository.UserRepository;
+import pl.gaamit.tasksAndNotes.repository.TaskRepository;
+import pl.gaamit.tasksAndNotes.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

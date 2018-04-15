@@ -1,8 +1,13 @@
-package com.example.tasksAndNotes.controller;
+package pl.gaamit.tasksAndNotes.controller;
 
-import com.example.tasksAndNotes.model.Note;
-import com.example.tasksAndNotes.repository.NoteRepository;
-import com.example.tasksAndNotes.repository.UserRepository;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.servlet.ModelAndView;
+import pl.gaamit.tasksAndNotes.model.Note;
+import pl.gaamit.tasksAndNotes.model.User;
+import pl.gaamit.tasksAndNotes.model.UserService;
+import pl.gaamit.tasksAndNotes.repository.NoteRepository;
+import pl.gaamit.tasksAndNotes.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,6 +21,9 @@ public class NoteController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private UserService userService;
 
 
     @GetMapping("/notes/add")
@@ -31,10 +39,21 @@ public class NoteController {
         return "redirect:/notes";
     }
 
-    @GetMapping("/notes")
+/*    @GetMapping("/notes")
     public String index(ModelMap modelMap){
         modelMap.addAttribute("notes",noteRepository.findAll());
         return "notes/notesList";
+    }*/
+
+    @RequestMapping(value="/notes", method = RequestMethod.GET)
+    public ModelAndView getNotesList(ModelMap modelMap){
+        modelMap.addAttribute("notes", noteRepository.findAll());
+        ModelAndView modelAndView = new ModelAndView();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByEmail(auth.getName());
+        modelAndView.addObject("userName", "Cześć " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
+        modelAndView.setViewName("notes/notesList");
+        return modelAndView;
     }
 
     @GetMapping("note/{id}")

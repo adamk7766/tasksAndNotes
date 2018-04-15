@@ -80,9 +80,9 @@ th{
     padding: 5px;
 }
 
-form button{
+/*form button{
     margin: 10px;
-}
+}*/
 
 ul {
 
@@ -120,3 +120,5 @@ ul.topnav li.right {float: right;}
     ul.topnav li {float: none;}
 
 }
+
+.background-grey {background-color: rgb(230, 232, 239)}

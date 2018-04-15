@@ -1,6 +1,6 @@
-package com.example.tasksAndNotes.repository;
+package pl.gaamit.tasksAndNotes.repository;
 
-import com.example.tasksAndNotes.model.Note;
+import pl.gaamit.tasksAndNotes.model.Note;
 import org.springframework.data.repository.CrudRepository;
 
 

@@ -1,26 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:th="http://www.w3.org/1999/xhtml">>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Index</title>
 
 </head>
 <body>
-
+<div class="container">
 <header>
 <ul class="topnav">
-    <li><a class="active" href="/">Panel Wyboru</a></li>
+    <li><a class="active" href="/index">Panel Wyboru</a></li>
     <li><a href="notes">Notatki</a></li>
     <li><a href="tasks">Zadania</a></li>
-    <li class="right"><a href="/">(: notatki & zadania :)</a></li>
+    <li><a href="/logout">Wyloguj</a></li>
+    <li  sec:authorize="hasAuthority('ADMIN')"><a href="/admin/home">Admin</a></li>
+    <li class="right"><a href="/index"><span th:utext="${userName}"></span></a></li>
 
 </ul>
 </header>
 
 <main>
+
     <!--<hr>-->
     <section>
         <h2 href="notes" >Notatki</h2>
@@ -53,7 +59,15 @@
 
 </main>
 
+
+<form th:action="@{/logout}" method="get">
+    <button class="btn btn-md btn-danger right" name="registration"
+            type="Submit">Logout</button>
+</form>
+
 <div id="footer" class="alt" th:include="fragments/fragments :: footer">
+</div>
+
 </div>
 </body>
 </html>
