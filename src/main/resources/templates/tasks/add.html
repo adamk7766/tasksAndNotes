@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 
-<body>
-
+<body class="background-grey">
+<div class="container">
 <header id="navbar_tasks" class="alt" th:include="fragments/fragments :: navbar_tasks">
 </header>
 
@@ -31,10 +33,11 @@
 
 
 
-    <input type="submit" value="Dodaj zadanie">
+    <input class="btn btn-md btn-success" type="submit" value="Dodaj zadanie">
 
 </form>
 <div id="footer" class="alt" th:include="fragments/fragments :: footer">
+</div>
 </div>
 </body>
 

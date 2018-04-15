@@ -30,12 +30,12 @@
     </ul>
 </div>
 
-<div th:fragment="navbar_users">
+<div th:fragment="navbar_admin">
     <ul class="topnav">
         <li><a href="/index">Panel Wyboru</a></li>
         <li><a href="/notes">Notatki</a></li>
         <li><a href="/tasks">Zadania</a>
-        <li  sec:authorize="hasAuthority('ADMIN')"><a href="/admin/home">Admin</a></li>
+        <li  sec:authorize="hasAuthority('ADMIN')"><a class="active" href="/admin/home">Admin</a></li>
         <li><a href="/logout">Wyloguj</a></li>
         <li class="right"><a href="/index"><span th:utext="${userName}"></span></a></li>
 

@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-</head>
-<body>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+</head>
+<body class="background-grey">
+<div class="container">
 <header id="navbar_tasks" class="alt" th:include="fragments/fragments :: navbar_tasks">
 </header>
 
@@ -16,12 +18,13 @@
     <h2 th:text="${task.title}"></h2>
     <label>Treść zadania:</label>
     <h2 th:text="${task.content}"></h2>
-    <label>Zadanie dla::</label>
+    <label>Zadanie dla:</label>
     <h2 th:text="${task.user}"></h2>
 
 </div>
 
 <div id="footer" class="alt" th:include="fragments/fragments :: footer">
+</div>
 </div>
 </body>
 </html>

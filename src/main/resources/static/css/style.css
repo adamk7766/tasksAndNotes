@@ -35,16 +35,6 @@ footer {
     text-align: center;
 }
 
-main form div label {
-    width: 200px;
-    display: inline-block;
-}
-
-main form div {
-    margin-bottom: 5px;
-    
-}
-
 textarea {
     border: none;
 }
@@ -72,17 +62,6 @@ div{
     padding: 5px;
 }
 
-td{
-    padding: 5px;
-}
-
-th{
-    padding: 5px;
-}
-
-/*form button{
-    margin: 10px;
-}*/
 
 ul {
 

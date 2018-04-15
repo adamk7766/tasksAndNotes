@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body>
-
+<body class="background-grey">
+<div class="container">
 <header id="navbar_notes" class="alt" th:include="fragments/fragments :: navbar_notes">
 </header>
 
@@ -29,6 +30,7 @@
 </div>
 
 <div id="footer" class="alt" th:include="fragments/fragments :: footer">
+</div>
 </div>
 </body>
 </html>

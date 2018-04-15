@@ -18,16 +18,14 @@
     <li><a class="active" href="/index">Panel Wyboru</a></li>
     <li><a href="notes">Notatki</a></li>
     <li><a href="tasks">Zadania</a></li>
-    <li><a href="/logout">Wyloguj</a></li>
     <li  sec:authorize="hasAuthority('ADMIN')"><a href="/admin/home">Admin</a></li>
+    <li><a href="/logout">Wyloguj</a></li>
     <li class="right"><a href="/index"><span th:utext="${userName}"></span></a></li>
 
 </ul>
 </header>
 
 <main>
-
-    <!--<hr>-->
     <section>
         <h2 href="notes" >Notatki</h2>
         <p>
@@ -36,10 +34,6 @@
             </a>
             Dodawanie, edycja, przegląd i usuwanie notatek.
         </p>
-
-
-
-
     </section>
     <!--<hr>-->
     <section class="grey-section">
@@ -51,19 +45,8 @@
             </a>
 
         </p>
-
-
-
     </section>
-    <!--<hr>-->
-
 </main>
-
-
-<form th:action="@{/logout}" method="get">
-    <button class="btn btn-md btn-danger right" name="registration"
-            type="Submit">Logout</button>
-</form>
 
 <div id="footer" class="alt" th:include="fragments/fragments :: footer">
 </div>

@@ -1,8 +1,13 @@
 package pl.gaamit.tasksAndNotes.controller;
 
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.servlet.ModelAndView;
 import pl.gaamit.tasksAndNotes.model.Task;
 
+import pl.gaamit.tasksAndNotes.model.User;
+import pl.gaamit.tasksAndNotes.model.UserService;
 import pl.gaamit.tasksAndNotes.repository.TaskRepository;
 import pl.gaamit.tasksAndNotes.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +25,9 @@ public class TaskController {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private UserService userService;
+
     @GetMapping("/tasks/add")
     public String add(ModelMap modelMap){
         modelMap.addAttribute("task",new Task());
@@ -33,10 +41,21 @@ public class TaskController {
         return "redirect:/tasks";
     }
 
-    @GetMapping("/tasks")
+/*    @GetMapping("/tasks")
     public String index(ModelMap modelMap){
         modelMap.addAttribute("tasks",taskRepository.findAll());
         return "tasks/tasksList";
+    }*/
+
+    @RequestMapping(value="/tasks", method = RequestMethod.GET)
+    public ModelAndView getTasksList(ModelMap modelMap){
+        modelMap.addAttribute("tasks", taskRepository.findAll());
+        ModelAndView modelAndView = new ModelAndView();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByEmail(auth.getName());
+        modelAndView.addObject("userName", "Cześć " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
+        modelAndView.setViewName("tasks/tasksList");
+        return modelAndView;
     }
 
     @GetMapping("task/{id}")
