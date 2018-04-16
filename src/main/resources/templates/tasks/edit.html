@@ -16,36 +16,41 @@
 <h1>Edycja zadania</h1>
 
 
-<form th:action="@{/tasks}" th:method="post" th:object="${task}">
+    <form th:action="@{/tasks}" th:method="post" th:object="${task}">
 
-    <input type="hidden" th:field="*{id}">
-    <label>Tytuł:</label>
-    <input type="text" th:field="*{title}">
-    <label>Zadanie dla:</label>
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label>Tytuł:</label>
+            <input type="text" th:field="*{title}" class="form-control">
+        </div>
+        <div>
+            <label>Zadanie dla:</label>
 
-    <select th:field="*{user}">
-        <option th:each="user: ${users}" th:value="${user.id}"
-                th:text="${user}"/>
-    </select>
+            <select th:field="*{user}" class="form-control">
+                <option th:each="user: ${users}" th:value="${user.id}"
+                        th:text="${user}"/>
+            </select>
+        </div>
+        <div>
+            <label>Treść:</label>
+            <input type="text" th:field="*{content}" class="form-control">
+        </div>
+        <div>
+            <label>Skończone:</label>
+            <input type="checkbox" name="finished" class="checkbox">
+        </div>
+        <input class="btn btn-md btn-success" type="submit" value="Potwierdź zmiany">
 
-    <label>Treść:</label>
-    <input type="text" th:field="*{content}">
+    </form>
 
-    <label>Skończone:</label>
-    <input type="checkbox" name="finished">
+    <form th:action="@{/tasks}" th:method="get">
 
-    <input class="btn btn-md btn-success" type="submit" value="Potwierdź zmiany">
+        <button class="btn btn-md btn-warning" type="submit" value="cancel">Anuluj</button>
 
-</form>
+    </form>
 
-<form th:action="@{/tasks}" th:method="get">
-
-    <button class="btn btn-md btn-warning" type="submit" value="cancel">Anuluj</button>
-
-</form>
-
-<div id="footer" class="alt" th:include="fragments/fragments :: footer">
-</div>
+    <div id="footer" class="alt" th:include="fragments/fragments :: footer">
+    </div>
 </div>
 </body>
 </html>
