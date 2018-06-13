@@ -26,7 +26,7 @@ public class Task {
         return finished;
     }
 
-    public String description(){
+    public String description() {
 
         return isFinished() ? "skończone " : "nieskończone";
     }
@@ -65,7 +65,7 @@ public class Task {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return getTitle();
     }
 }

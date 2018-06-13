@@ -46,17 +46,17 @@ public class User {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Note> notes = new ArrayList<>();
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Task> tasks = new ArrayList<>();
 
-    public int getNumberOfNotes(){
+    public int getNumberOfNotes() {
         return notes.size();
     }
 
-    public int getNumberOfTasks(){
+    public int getNumberOfTasks() {
         return tasks.size();
     }
 
@@ -133,8 +133,8 @@ public class User {
     }
 
     @Override
-    public String toString(){
-        return getName()+" "+getLastName();
+    public String toString() {
+        return getName() + " " + getLastName();
     }
 
 }

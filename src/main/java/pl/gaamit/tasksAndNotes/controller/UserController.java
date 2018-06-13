@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 
-
 @Controller
 public class UserController {
 
@@ -17,28 +16,27 @@ public class UserController {
     private UserRepository userRepository;
 
 
-
     @GetMapping("/users")
-    public String index(ModelMap modelMap){
-        modelMap.addAttribute("users",userRepository.findAll());
+    public String index(ModelMap modelMap) {
+        modelMap.addAttribute("users", userRepository.findAll());
         return "users/usersList";
     }
 
     @GetMapping("user/{id}/edit")
-    public String edit(@PathVariable Long id,ModelMap modelMap){
-        modelMap.put("user",userRepository.findById(id).get());
+    public String edit(@PathVariable Long id, ModelMap modelMap) {
+        modelMap.put("user", userRepository.findById(id).get());
         return "users/edit";
     }
 
     @GetMapping("users/{id}")
-    public String show(@PathVariable Long id, ModelMap modelMap){
-        modelMap.put("user",userRepository.findById(id).get());
+    public String show(@PathVariable Long id, ModelMap modelMap) {
+        modelMap.put("user", userRepository.findById(id).get());
         return "users/show";
     }
 
 
     @GetMapping("users/{id}/delete")
-    public String delete(@PathVariable Long id,ModelMap modelMap){
+    public String delete(@PathVariable Long id, ModelMap modelMap) {
         userRepository.deleteById(id);
         return "redirect:/users";
     }

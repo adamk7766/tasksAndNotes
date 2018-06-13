@@ -29,14 +29,14 @@ public class TaskController {
     private UserService userService;
 
     @GetMapping("/tasks/add")
-    public String add(ModelMap modelMap){
-        modelMap.addAttribute("task",new Task());
-        modelMap.addAttribute("users",userRepository.findAll());
+    public String add(ModelMap modelMap) {
+        modelMap.addAttribute("task", new Task());
+        modelMap.addAttribute("users", userRepository.findAll());
         return "tasks/add";
     }
 
     @PostMapping("/tasks")
-    public String save(@ModelAttribute Task task){
+    public String save(@ModelAttribute Task task) {
         taskRepository.save(task);
         return "redirect:/tasks";
     }
@@ -47,8 +47,8 @@ public class TaskController {
         return "tasks/tasksList";
     }*/
 
-    @RequestMapping(value="/tasks", method = RequestMethod.GET)
-    public ModelAndView getTasksList(ModelMap modelMap){
+    @RequestMapping(value = "/tasks", method = RequestMethod.GET)
+    public ModelAndView getTasksList(ModelMap modelMap) {
         modelMap.addAttribute("tasks", taskRepository.findAll());
         ModelAndView modelAndView = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -65,7 +65,7 @@ public class TaskController {
     }
 
     @GetMapping("task/{id}/delete")
-    public String delete(@PathVariable Long id,ModelMap modelMap){
+    public String delete(@PathVariable Long id, ModelMap modelMap) {
         taskRepository.deleteById(id);
         return "redirect:/tasks";
     }
@@ -73,11 +73,11 @@ public class TaskController {
     @GetMapping("task/{id}/edit")
     public String edit(@PathVariable Long id, ModelMap modelMap) {
         modelMap.put("task", taskRepository.findById(id).get());
-        modelMap.addAttribute("users",userRepository.findAll());
+        modelMap.addAttribute("users", userRepository.findAll());
         return "tasks/edit";
     }
 
-    @RequestMapping(value="/edit1", method=RequestMethod.POST, params="action=cancel")
+    @RequestMapping(value = "/edit1", method = RequestMethod.POST, params = "action=cancel")
     public String cancel() {
         return "tasks/tasksList";
     }

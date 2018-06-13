@@ -27,14 +27,14 @@ public class NoteController {
 
 
     @GetMapping("/notes/add")
-    public String add(ModelMap modelMap){
-        modelMap.addAttribute("note",new Note());
-        modelMap.addAttribute("users",userRepository.findAll());
+    public String add(ModelMap modelMap) {
+        modelMap.addAttribute("note", new Note());
+        modelMap.addAttribute("users", userRepository.findAll());
         return "notes/add";
     }
 
     @PostMapping("/notes")
-    public String save(@ModelAttribute Note note){
+    public String save(@ModelAttribute Note note) {
         noteRepository.save(note);
         return "redirect:/notes";
     }
@@ -45,8 +45,8 @@ public class NoteController {
         return "notes/notesList";
     }*/
 
-    @RequestMapping(value="/notes", method = RequestMethod.GET)
-    public ModelAndView getNotesList(ModelMap modelMap){
+    @RequestMapping(value = "/notes", method = RequestMethod.GET)
+    public ModelAndView getNotesList(ModelMap modelMap) {
         modelMap.addAttribute("notes", noteRepository.findAll());
         ModelAndView modelAndView = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -63,7 +63,7 @@ public class NoteController {
     }
 
     @GetMapping("note/{id}/delete")
-    public String delete(@PathVariable Long id,ModelMap modelMap){
+    public String delete(@PathVariable Long id, ModelMap modelMap) {
         noteRepository.deleteById(id);
         return "redirect:/notes";
     }
@@ -71,11 +71,11 @@ public class NoteController {
     @GetMapping("note/{id}/edit")
     public String edit(@PathVariable Long id, ModelMap modelMap) {
         modelMap.put("note", noteRepository.findById(id).get());
-        modelMap.addAttribute("users",userRepository.findAll());
+        modelMap.addAttribute("users", userRepository.findAll());
         return "notes/edit";
     }
 
-    @RequestMapping(value="/edit", method=RequestMethod.POST, params="action=cancel")
+    @RequestMapping(value = "/edit", method = RequestMethod.POST, params = "action=cancel")
     public String cancel() {
         return "notes/notesList";
     }

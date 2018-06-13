@@ -4,7 +4,6 @@ import pl.gaamit.tasksAndNotes.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import pl.gaamit.tasksAndNotes.repository.RoleRepository;
 import pl.gaamit.tasksAndNotes.repository.UserRepository;
 
 import java.util.Arrays;
@@ -12,7 +11,7 @@ import java.util.HashSet;
 
 
 @Service("userService")
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
